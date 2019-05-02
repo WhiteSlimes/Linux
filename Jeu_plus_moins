@@ -1,0 +1,41 @@
+### Fait par Alexis Papon
+### Le 01/05/2019
+### ===> Jeu du plus ou moins < ===
+### Initialisations du jeux
+reponsejoueur=-1
+typeset -i num=0
+echo -e "===> Jeu du plus ou moins <===\n"
+echo -e "Trouve le nombre aléatoire entre 1 et 1000 !\n"
+
+### Génération du numéro
+
+(( reponse = RANDOM % 1001 ))
+
+### Jouer 
+
+while (( reponsejoueur != reponse )); do
+num=num+1
+
+### Joueur qui cherche le numéro
+
+
+read -p "Entre un nombre ! Pour l'instant c'est essais numéro $num :" reponsejoueur
+if [[ $reponsejoueur = [0-9]* ]]; then
+    if (( reponsej <= 1000 && reponsej >= 0 ));then
+            if (( reponsejoueur < reponse )); 
+                then
+                    echo -e "C'est plus !"        
+            elif (( reponsejoueur > reponse)); 
+                then 
+                    echo -e "C'est moins !"        
+            fi
+        else 
+            echo -e "C'est un chiffre entre 1 et 1000 qu'il faut rentrer!"
+        fi
+    else 
+        echo -e "Les lettres ne sont pas autorisé !"
+    fi
+
+done
+echo -e "Bien joué\n"
+echo -e "Tu a trouvé le numéro en $num essais c'est pas mal"
