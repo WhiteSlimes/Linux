@@ -1,0 +1,5 @@
+#Fait par Alexis Papon
+#Le 03/05/2019
+#===> YoutubeDl <===
+#!/bin/bash
+youtube-dl -x $1
